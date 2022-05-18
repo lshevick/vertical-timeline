@@ -70,15 +70,61 @@ body {
     z-index: 10;
 }
 
+/* CSS for timeline card */
+
 .timeline-card {
     position: relative;
     display: flex;
     bottom: 0;
     flex-direction: column;
-    width: 20rem;
-    padding: 1rem;
+    width: 20vw;
+    padding: 1.5rem;
     background-color: #eee;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
 }
+
+.timeline-card:hover {
+    transform: scale(1.01);
+    box-shadow: 1px 1px 10px white;
+}
+/* ------------------------------------------------------ */
+
+/* CSS for button*/
+.timeline-card button {
+    width: 8rem;
+}
+
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+/* --------------------------------------------- */
 
 
 .timeline-circle:nth-child(even) .timeline-card {
@@ -93,12 +139,13 @@ body {
     left: -5%;
     bottom: 5%;
     border-style: solid;
-    border-width: 8px 16px 8px 0;
+    border-width: 10px 20px 10px 0;
     border-color: transparent var(--secondary-color) transparent transparent;
 }
 
 .timeline-circle:nth-child(odd) .timeline-card {
-    left: -28rem;
+    float: right;
+    right: 8rem;
 }
 
 .timeline-circle:nth-child(odd) .timeline-card::before {
@@ -109,17 +156,23 @@ body {
     right: -5%;
     bottom: 5%;
     border-style: solid;
-    border-width: 8px 0 8px 16px;
+    border-width: 10px 0 10px 20px;
     border-color: transparent transparent transparent var(--secondary-color);
 }
 
 @media (max-width: 900px) {
+
+    .timeline-card {
+        width: 50vw;
+    }
+
     .timeline-circle {
         margin: 0;
         left: 3rem;
     }
 
     .timeline-circle:nth-child(odd) .timeline-card {
+        float: left;
         left: 8rem;
     }
     
