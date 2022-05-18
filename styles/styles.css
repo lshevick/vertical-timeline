@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+:root {
+    --primary-color: #333;
+    --secondary-color: #EEE;
+    --tertiary-color: #f86681;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+.icon::after {
+    display: none;
+}
+
+::after,
+::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    font-family: Mukta, sans-serif;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    height: 100%;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.main-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+
+.timeline-card {
+    flex: 1 1 50%;
+    position: relative;
+    display: block;
+    width: 20rem;
+    height: 20rem;
+    background-color: #eee;
+}
+
+.timeline-card:nth-child(odd) {
+    left: 1%;
+}
+
+.timeline-card::after {
+    text-align: center;
+    font: 'Font Awesome 5 Free';
+    content: '\f1da';
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--tertiary-color);
+    position: absolute;
+}
+
+.timeline-card:nth-child(odd)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent var(--secondary-color);
+}
+
+.timeline-card:nth-child(even) {
+    left: 60%;
+}
+
+
+.main-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    height: 100%;
+    width: 0.4rem;
+    background: var(--tertiary-color);
+}
