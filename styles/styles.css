@@ -85,7 +85,7 @@ body {
     bottom: 0;
     flex-direction: column;
     width: 20vw;
-    padding: 1.5rem;
+    padding: 1rem;
     background-color: #eee;
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
@@ -95,6 +95,28 @@ body {
     transform: scale(1.01);
     box-shadow: 1px 2px 15px #eee;
 }
+
+.timeline-card time {
+    font-size: 0.75rem;
+    background-color: var(--tertiary-color);
+    width: 50%;
+    align-items: flex-start;
+}
+
+.more-info {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.open {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    visibility: visible;
+    opacity: 1;
+}
+
 /* ------------------------------------------------------ */
 
 /* CSS for button*/
@@ -103,39 +125,39 @@ body {
 }
 
 .button-54 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #000;
-  cursor: pointer;
-  border: 3px solid;
-  padding: 0.25em 0.5em;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .button-54:active {
-  box-shadow: 0px 0px 0px 0px;
-  top: 5px;
-  left: 5px;
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
 }
 
 @media (min-width: 768px) {
-  .button-54 {
-    padding: 0.25em 0.75em;
-  }
+    .button-54 {
+        padding: 0.25em 0.75em;
+    }
 }
 
 /* --------------------------------------------- */
 
 
 .timeline-circle:nth-child(even) .timeline-card {
-    transform: translate3d(200px,0,-1);
+    transform: translate3d(200px, 0, -1);
     left: 8rem;
 }
 
@@ -152,7 +174,7 @@ body {
 }
 
 .timeline-circle:nth-child(odd) .timeline-card {
-    transform: translate3d(-200px,0,-1);
+    transform: translate3d(-200px, 0, -1);
     float: right;
     right: 8rem;
 }
@@ -170,8 +192,8 @@ body {
 }
 
 
-.timeline-card.in-view { 
-    transform: translate3d(0px,0,0);
+.timeline-card.in-view {
+    transform: translate3d(0px, 0, 0);
     visibility: visible;
     opacity: 1;
 }
@@ -191,7 +213,7 @@ body {
         float: left;
         left: 8rem;
     }
-    
+
     .timeline-circle:nth-child(odd) .timeline-card::before {
         content: '';
         position: absolute;
